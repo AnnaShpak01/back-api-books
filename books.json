@@ -1,0 +1,320 @@
+{
+  "books": [
+    {
+      "status": "Completed",
+      "name": "A Wrinkle In Time",
+      "author": "Madeline L’engle",
+      "description": "This book has a mix of shorter and longer sentences. The short sentences allow the readers to relax a little bit more. They also create the scene well and let you know what is happening through simple words. There is a lot of vocabulary to learn. It is a good book if you’ve already got experience reading novels in English. Make sure you have your vocabulary notebook with you, just in case there are any cool words that you’d like to learn. This book has MANY!",
+      "imgsrc": "https://images-na.ssl-images-amazon.com/images/I/518fLGSGVML.jpg",
+      "color": "red",
+      "genre": "novel",
+      "pages": 256,
+      "id": "0"
+    },
+    {
+      "status": "New Books",
+      "name": "Charlotte’s Web",
+      "author": "E.B. White",
+      "description": "This is a lovely novel that all age groups can understand. Aimed at native English speaking children, there are many adults who still say this famous book is their favorite. This is part of the national curriculum in many schools around the world, so it’s quite possible this book will also come up in conversation. You can almost guarantee that the majority of native English speakers have read this book at least once.",
+      "imgsrc": "https://images-na.ssl-images-amazon.com/images/I/61%2B3z1o4oUL.jpg",
+      "color": "yellow",
+      "genre": "children's literature",
+      "pages": 192,
+      "id": "1"
+    },
+    {
+      "status": "In Progress",
+      "name": "Mieko and the Fifth Treasure",
+      "author": "Eleanor Coerr",
+      "description": "This book is not really so famous, but it is on the recommended book list. What’s great about “Mieko and the Fifth Treasure” is that it’s short. At only 77 pages long, this will be an easy read. Again this book is aimed at young native English speakers, so if you’re learning English, the level won’t be so difficult. This book will keep you interested as you’ll learn many interesting things about Japan and its culture.",
+      "imgsrc": "https://images-na.ssl-images-amazon.com/images/I/51-Q2wmB3yL.jpg",
+      "color": "blue",
+      "genre": "fiction",
+      "pages": 80,
+      "id": "2"
+    },
+    {
+      "status": "Completed",
+      "name": "The Outsiders",
+      "author": "S.E. Hinton",
+      "description": "This short novel is perfect for EFL learners. It has modern themes and typical teenage issues that people around the world have experienced. There are very few cultural notes in this, which means you don’t need much background information. The sentences are short and easy to understand. The vocabulary is also very easy. You should be able to read this book without difficulty.",
+      "imgsrc": "https://images-na.ssl-images-amazon.com/images/I/51vBqUSAs%2BL.jpg",
+      "color": "brown",
+      "genre": "novel",
+      "pages": 208,
+      "id": "3"
+    },
+    {
+      "status": "New Books",
+      "name": "The House On Mango Street",
+      "author": "Sandra Cisneros",
+      "description": "The great thing about “The House On Mango Street” is that it’s an interesting read. It’s written from the point of view of the writer. You can really feel what the protagonist (the main character) feels. The sentences are really short so it’s also easy to understand. There are a few challenging words and a little bit of descriptive language, but you can usually understand them with the context. Another great thing about this is book is that it gives you a deep understanding of a different culture.",
+      "imgsrc": "https://images-na.ssl-images-amazon.com/images/I/51HsoIvCFUL.jpg",
+      "color": "green",
+      "genre": "fiction",
+      "pages": 110,
+      "id": "4"
+    },
+    {
+      "status": "Favourites",
+      "name": "Thirteen Reasons Why",
+      "author": "Jay Asher",
+      "description": "This story takes place in the present, which means the writer writes using simple grammar. All sentences are short and the vocabulary is relatively easy. The interesting grammar and short paragraphs make this a quick and easy book for ESL learners. This is an award-winning book and on the NY Times best books list, so it’s worth a read. This book deals with some heavy issues. If you’re looking for something light and happy to read over the summer vacation, you should not read this book.",
+      "imgsrc": "https://images-na.ssl-images-amazon.com/images/I/5112kQJt31L.jpg",
+      "color": "violet",
+      "genre": "young adult",
+      "pages": 288,
+      "id": "5"
+    },
+    {
+      "status": "Completed",
+      "name": "Peter Pan",
+      "author": "J.M. Barrie",
+      "description": "Almost everyone knows the story of “Peter Pan” which is why this is an easy read. Being familiar with a story already helps the reader to understand the text better. This book is aimed at children, but it continues to be enjoyed by adults around the world too.",
+      "imgsrc": "https://images-na.ssl-images-amazon.com/images/I/41JnDhCM%2BYL.jpg",
+      "color": "pink",
+      "genre": "children's literature",
+      "pages": 176,
+      "id": "6"
+    },
+    {
+      "status": "Favourites",
+      "name": "The Old Man and the Sea",
+      "author": "Ernest Hemmingway",
+      "description": "This is a famous classic. Almost all native English speakers will have read this book at some point in school. So, if you ever find yourself in a conversation about literature and books, this is a good one to talk about. At some points it has a little bit of difficult vocabulary, however, it is short and you won’t have too much trouble being able to finish it.",
+      "imgsrc": "https://images-na.ssl-images-amazon.com/images/I/51Fup9hSVEL.jpg",
+      "color": "blue",
+      "genre": "fiction",
+      "pages": 127,
+      "id": "7"
+    },
+    {
+      "status": "In Progress",
+      "name": "The Giver",
+      "author": "Lois Lowry",
+      "description": "“The Giver” begins in a very interesting way and catches the attention of the readers from the beginning. It has easy-to-understand grammar. Most of the grammar is just past simple and past perfect. All of the sentences are short and there is no confusion in the story. This is a longer book. It’s really easy though, so you’ll finish it quickly.",
+      "imgsrc": "https://images-na.ssl-images-amazon.com/images/I/51UsRhmuBkL.jpg",
+      "color": "yellow",
+      "genre": "fiction",
+      "pages": 208,
+      "id": "8"
+    },
+    {
+      "status": "Favourites",
+      "name": "Number the Stars",
+      "author": "Lois Lowry",
+      "description": "This is a realistic novel. It’s based on history. Unlike other historical literature, it’s easy to understand. If you already know a lot of information about World War II, this might be an interesting book for you. It’s not recommended if you don’t know too much about the World Wars. In this case, you will be focusing on trying to understand the facts too much so you will not enjoy the book as much.",
+      "imgsrc": "https://images-na.ssl-images-amazon.com/images/I/51igOegVNTL.jpg",
+      "color": "orange",
+      "genre": "fiction",
+      "pages": 137,
+      "id": "9"
+    },
+    {
+      "name": "Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "description": "Sherlock Holmes is a fictional detective of the late 19th and early 20th centuries, who first appeared in publication in 1887. He was devised by British author and physician Sir Arthur Conan Doyle. A brilliant London-based detective, Holmes is famous for his prowess at using logic and astute observation to solve cases. He is perhaps the most famous fictional detective, and indeed one of the best known and most universally recognizable literary characters.",
+      "genre": "detective",
+      "status": "In Progress",
+      "color": "orange",
+      "imgsrc": "https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/51IQ2ESJAHL._SX302_BO1,204,203,200_.jpg",
+      "pages": "1088",
+      "id": "8cd421e7-9255-447a-b787-a85bcc3c7cbb"
+    },
+    {
+      "id": "9e997f1f-1c41-41c4-a70b-c1c96b6bc8db",
+      "name": "Fairy Tale",
+      "author": "Stephen King",
+      "description": "Charlie Reade looks like a regular high school kid, great at baseball and football, a decent student. But he carries a heavy load. His mom was killed in a hit-and-run accident when he was seven, and grief drove his dad to drink. Charlie learned how to take care of himself—and his dad. When Charlie is seventeen, he meets a dog named Radar and her aging master, Howard Bowditch, a recluse in a big house at the top of a big hill, with a locked shed in the backyard. Sometimes strange sounds emerge from it.\nCharlie starts doing jobs for Mr. Bowditch and loses his heart to Radar. Then, when Bowditch dies, he leaves Charlie a cassette tape telling a story no one would believe. What Bowditch knows, and has kept secret all his long life, is that inside the shed is a portal to another world.",
+      "genre": "thriller",
+      "status": "New Books",
+      "color": "blue",
+      "imgsrc": "https://m.media-amazon.com/images/I/51ECRZXoGyL._SX327_BO1,204,203,200_.jpg",
+      "pages": "608"
+    }
+  ],
+  "filters": [
+    {
+      "id": "all",
+      "name": "all",
+      "label": "All",
+      "className": "btn-outline-dark"
+    },
+    {
+      "id": "New Books",
+      "name": "New Books",
+      "label": "New Books",
+      "className": "btn-danger"
+    },
+    {
+      "id": "In Progress",
+      "name": "In Progress",
+      "label": "In Progress",
+      "className": "btn-primary"
+    },
+    {
+      "id": "Favourites",
+      "name": "Favourites",
+      "label": "Favourites",
+      "className": "btn-success"
+    },
+    {
+      "id": "Completed",
+      "name": "Completed",
+      "label": "Completed",
+      "className": "btn-secondary"
+    }
+  ],
+  "bingo": [
+    {
+      "task": "A non-fiction book",
+      "color": "#FA8072",
+      "status": false,
+      "id": "1"
+    },
+    {
+      "task": "Read a memoir",
+      "color": "#ADFF2F",
+      "status": false,
+      "id": "2"
+    },
+    {
+      "task": "A book with multiple narrators",
+      "color": "#FFFF00",
+      "status": false,
+      "id": "3"
+    },
+    {
+      "task": "A book published within the last 3 years",
+      "color": "#AFEEEE",
+      "status": true,
+      "id": "4"
+    },
+    {
+      "task": "A book with an animal main character",
+      "color": "#F0E68C",
+      "status": false,
+      "id": "5"
+    },
+    {
+      "task": "A book about climate change",
+      "color": "#87CEFA",
+      "status": true,
+      "id": "6"
+    },
+    {
+      "task": "A book with a female protagonist",
+      "color": "#FFE4E1",
+      "status": true,
+      "id": "7"
+    },
+    {
+      "task": "A book by a Black author",
+      "color": "#9370DB",
+      "status": false,
+      "id": "8"
+    },
+    {
+      "task": "Graphic novel",
+      "color": "#FAFAD2",
+      "status": true,
+      "id": "9"
+    },
+    {
+      "task": "A number in the title",
+      "color": "#DC143C",
+      "status": false,
+      "id": "10"
+    },
+    {
+      "task": "A book with a name in the title",
+      "color": "#9ACD32",
+      "status": false,
+      "id": "11"
+    },
+    {
+      "task": "An award-winning book",
+      "color": "#FF8C00",
+      "status": true,
+      "id": "12"
+    },
+    {
+      "task": "A book with multiple authors",
+      "color": "#FFB6C1",
+      "status": false,
+      "id": "13"
+    },
+    {
+      "task": "An audiobook",
+      "color": "#BA55D3",
+      "status": true,
+      "id": "14"
+    },
+    {
+      "task": "A book with a blue cover",
+      "color": "#FFDEAD",
+      "status": false,
+      "id": "15"
+    },
+    {
+      "task": "A book set in the future",
+      "color": "#A52A2A",
+      "status": false,
+      "id": "16"
+    },
+    {
+      "task": "A book involving travel",
+      "color": "#EEE8AA",
+      "status": false,
+      "id": "17"
+    },
+    {
+      "task": "A book set around the Christmas holiday",
+      "color": "#DB7093",
+      "status": true,
+      "id": "18"
+    },
+    {
+      "task": "A murder mystery",
+      "color": "#FFA07A",
+      "status": false,
+      "id": "19"
+    },
+    {
+      "task": "A book that became a film",
+      "color": "#20B2AA",
+      "status": true,
+      "id": "20"
+    },
+    {
+      "task": "A book by an author from your country",
+      "color": "#6495ED",
+      "status": false,
+      "id": "21"
+    },
+    {
+      "task": "A book about food",
+      "color": "#FFE4E",
+      "status": false,
+      "id": "22"
+    },
+    {
+      "task": "Part of a trilogy",
+      "color": "#F4A460",
+      "status": false,
+      "id": "23"
+    },
+    {
+      "task": "A debut author",
+      "color": "#DDA0DD",
+      "status": false,
+      "id": "24"
+    },
+    {
+      "task": "A character learns a life lesson",
+      "color": "#98FB98",
+      "status": false,
+      "id": "25"
+    }
+  ]
+}
