@@ -5,6 +5,8 @@ const PORT = 8080
 
 const data = require('./books.json')
 const books = data.books
+const filters = data.filters
+const bingo = data.bingo
 
 app.use(helmet())
 
@@ -16,6 +18,22 @@ app.use((err, req, res, next) => {
 app.get('/books', (req, res, next) => {
   try {
     res.json(books)
+  } catch (error) {
+    next(error)
+  }
+})
+
+app.get('/filters', (req, res, next) => {
+  try {
+    res.json(filters)
+  } catch (error) {
+    next(error)
+  }
+})
+
+app.get('/bingo', (req, res, next) => {
+  try {
+    res.json(bingo)
   } catch (error) {
     next(error)
   }
