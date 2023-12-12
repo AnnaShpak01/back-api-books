@@ -1,5 +1,6 @@
 const express = require('express')
 const helmet = require('helmet')
+const cors = require('cors')
 const app = express()
 const PORT = 8080
 
@@ -9,6 +10,8 @@ const filters = data.filters
 const bingo = data.bingo
 
 app.use(helmet())
+
+app.use(cors())
 
 app.use((err, req, res, next) => {
   console.error(err.stack)
