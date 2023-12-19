@@ -1,6 +1,7 @@
 const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
+const fs = require('fs')
 const app = express()
 const PORT = 8080
 
@@ -136,7 +137,7 @@ app.delete('/books/:id', async (req, res, next) => {
 
 async function saveDataToJSON() {
   const updatedData = { books, filters, bingo }
-  await fs.writeFile('./books.json', JSON.stringify(updatedData, null, 2))
+  await fs.writeFile('./books.json', JSON.stringify(updatedData, null, 2), () => {})
 }
 
 app.listen(PORT, () => {
