@@ -16,15 +16,27 @@ app.use(helmet())
 
 app.use(cors())
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  next()
+})
+
 app.use((err, req, res, next) => {
   console.error(err.stack)
   res.status(500).json({ error: 'Something went wrong!' })
 })
 
+app.get('/', (req, res) => {
+  res.send('Hello World!') // або віддайте вашу головну сторінку
+})
+
 app.get('/books', (req, res, next) => {
   try {
+    console.log('Handling /books request')
     res.json(books)
   } catch (error) {
+    console.error('Error handling /books request:', error)
     next(error)
   }
 })
@@ -55,6 +67,8 @@ app.post('/bingo', async (req, res, next) => {
     next(error)
   }
 })
+
+app.get('/favicon.ico', (req, res) => res.status(204).end())
 
 app.put('/bingo/:id', async (req, res, next) => {
   try {
@@ -141,5 +155,5 @@ async function saveDataToJSON() {
 }
 
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}/books`)
+  console.log(`Server is running at http://localhost:${PORT}/`)
 })
