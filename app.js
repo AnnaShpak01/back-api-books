@@ -2,6 +2,7 @@ const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
 const fs = require('fs')
+const jwt = require('jsonwebtoken')
 const app = express()
 const PORT = 8080
 
@@ -11,14 +12,15 @@ const filters = data.filters
 const bingo = data.bingo
 
 app.use(express.json())
-
 app.use(helmet())
-
 app.use(cors())
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  )
   next()
 })
 
@@ -27,8 +29,25 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Something went wrong!' })
 })
 
+function verifyToken(req, res, next) {
+  const token = req.headers['authorization']
+  if (!token) {
+    return res.status(401).json({ error: 'Unauthorized' })
+  }
+
+  jwt.verify(token, process.env.NEXTAUTH_SECRET, (err, decodedToken) => {
+    if (err) {
+      return res.status(403).json({ error: 'Forbidden' })
+    }
+    req.decodedToken = decodedToken
+    next()
+  })
+}
+
+app.use(['/books', '/filters', '/bingo', '/books/:id', '/bingo/:id'], verifyToken)
+
 app.get('/', (req, res) => {
-  res.send('Hello World!') // або віддайте вашу головну сторінку
+  res.send('Hello World!')
 })
 
 app.get('/books', (req, res, next) => {
@@ -139,7 +158,7 @@ app.delete('/books/:id', async (req, res, next) => {
     const index = books.findIndex((book) => book.id === id)
     if (index !== -1) {
       books.splice(index, 1)
-      await saveDataToJSON() // Зберегти зміни в файл
+      await saveDataToJSON()
       res.json({ message: 'Book deleted successfully' })
     } else {
       res.status(404).json({ message: 'Book not found' })
