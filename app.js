@@ -37,7 +37,6 @@ function verifyToken(req, res, next) {
     return res.status(401).json({ error: 'Unauthorized' })
   }
 
-  console.log(process.env.NEXTAUTH_SECRET)
   jwt.verify(token, process.env.NEXTAUTH_SECRET, (err, decodedToken) => {
     if (err) {
       return res.status(403).json({ error: 'Forbidden' })
