@@ -32,7 +32,8 @@ app.use((err, req, res, next) => {
 })
 
 function verifyToken(req, res, next) {
-  const token = req.headers['authorization']
+  const cleanToken = req.headers['authorization'].split(' ')
+  const token = cleanToken[1]
   if (!token) {
     return res.status(401).json({ error: 'Unauthorized' })
   }
