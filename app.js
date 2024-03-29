@@ -8,10 +8,34 @@ const jwt = require('jsonwebtoken')
 const app = express()
 const PORT = 8080
 
-const data = require('./books.json')
-const books = data.books
-const filters = data.filters
-const bingo = data.bingo
+const { MongoClient } = require('mongodb')
+
+const uri = 'mongodb://127.0.0.1:27017/library'
+const client = new MongoClient(uri)
+
+async function connectToDatabase() {
+  try {
+    await client.connect()
+    console.log('Connected to MongoDB')
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error)
+  }
+}
+
+connectToDatabase()
+
+let booksCollection
+let filtersCollection
+let bingoCollection
+
+async function connectToDatabaseAndCollections() {
+  const database = client.db('library')
+  booksCollection = database.collection('books')
+  filtersCollection = database.collection('filters')
+  bingoCollection = database.collection('bingo')
+}
+
+connectToDatabaseAndCollections()
 
 app.use(express.json())
 app.use(helmet())
@@ -53,38 +77,31 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.get('/books', (req, res, next) => {
+app.get('/books', async (req, res, next) => {
   try {
     console.log('Handling /books request')
+    const books = await booksCollection.find({}).toArray()
     res.json(books)
+    console.log(res)
   } catch (error) {
     console.error('Error handling /books request:', error)
     next(error)
   }
 })
 
-app.get('/filters', (req, res, next) => {
+app.get('/filters', async (req, res, next) => {
   try {
+    const filters = await filtersCollection.find({}).toArray()
     res.json(filters)
   } catch (error) {
     next(error)
   }
 })
 
-app.get('/bingo', (req, res, next) => {
+app.get('/bingo', async (req, res, next) => {
   try {
+    const bingo = await bingoCollection.find({}).toArray()
     res.json(bingo)
-  } catch (error) {
-    next(error)
-  }
-})
-
-app.post('/bingo', async (req, res, next) => {
-  try {
-    const newBingoItem = req.body
-    bingo.push(newBingoItem)
-    await saveDataToJSON()
-    res.json(newBingoItem)
   } catch (error) {
     next(error)
   }
@@ -96,14 +113,15 @@ app.put('/bingo/:id', async (req, res, next) => {
   try {
     const { id } = req.params
     const updatedBingoItem = req.body
-    const index = bingo.findIndex((item) => item.id === id)
 
-    if (index !== -1) {
-      bingo[index] = updatedBingoItem
-      await saveDataToJSON()
-      res.json(updatedBingoItem)
+    const filter = { _id: ObjectId(id) } // Фильтр для поиска элемента по его идентификатору
+
+    const result = await bingoCollection.updateOne(filter, { $set: updatedBingoItem }) // Обновление элемента
+
+    if (result.modifiedCount === 1) {
+      res.json(updatedBingoItem) // Если элемент обновлен успешно, отправляем его в качестве ответа
     } else {
-      res.status(404).json({ message: 'Bingo item not found' })
+      res.status(404).json({ message: 'Bingo item not found' }) // Если элемент не найден, отправляем ошибку 404
     }
   } catch (error) {
     next(error)
@@ -114,7 +132,6 @@ app.delete('/bingo/:id', async (req, res, next) => {
   try {
     const { id } = req.params
     const index = bingo.findIndex((item) => item.id === id)
-
     if (index !== -1) {
       bingo.splice(index, 1)
       await saveDataToJSON()
@@ -126,13 +143,13 @@ app.delete('/bingo/:id', async (req, res, next) => {
     next(error)
   }
 })
-
 app.post('/books', async (req, res, next) => {
   try {
     const newBook = req.body
-    books.push(newBook)
-    await saveDataToJSON()
-    res.json(newBook)
+
+    const result = await booksCollection.insertOne(newBook)
+
+    res.json(result.ops[0])
   } catch (error) {
     next(error)
   }
@@ -142,10 +159,12 @@ app.put('/books/:id', async (req, res, next) => {
   try {
     const { id } = req.params
     const updatedBook = req.body
-    const index = books.findIndex((book) => book.id === id)
-    if (index !== -1) {
-      books[index] = updatedBook
-      await saveDataToJSON()
+
+    const filter = { _id: ObjectId(id) }
+
+    const result = await booksCollection.updateOne(filter, { $set: updatedBook })
+
+    if (result.modifiedCount === 1) {
       res.json(updatedBook)
     } else {
       res.status(404).json({ message: 'Book not found' })
@@ -158,10 +177,12 @@ app.put('/books/:id', async (req, res, next) => {
 app.delete('/books/:id', async (req, res, next) => {
   try {
     const { id } = req.params
-    const index = books.findIndex((book) => book.id === id)
-    if (index !== -1) {
-      books.splice(index, 1)
-      await saveDataToJSON()
+
+    const filter = { _id: ObjectId(id) }
+
+    const result = await booksCollection.deleteOne(filter)
+
+    if (result.deletedCount === 1) {
       res.json({ message: 'Book deleted successfully' })
     } else {
       res.status(404).json({ message: 'Book not found' })
@@ -170,11 +191,6 @@ app.delete('/books/:id', async (req, res, next) => {
     next(error)
   }
 })
-
-async function saveDataToJSON() {
-  const updatedData = { books, filters, bingo }
-  await fs.writeFile('./books.json', JSON.stringify(updatedData, null, 2), () => {})
-}
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}/`)
